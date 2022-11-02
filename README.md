@@ -112,3 +112,36 @@ title: To Do
 ```
 
 ![Markdown card](https://user-images.githubusercontent.com/1756198/106674478-5a6cb080-65c4-11eb-9306-e363ff399f28.png)
+
+### Create Template Sensors
+
+You can add binary sensors linked to the presense of your task, and even wrap your Markdown Card, etc. in a Conditional card as well by leveraging template sensors. This example show show to get a binary sensor from `Tasks Due Today` for a list called "house".
+
+```yaml
+template:
+  - binary_sensor:
+    # Microsoft To Do
+    - name: "Tasks Due Today"
+      state: >
+        {% if state_attr('calendar.house', 'duetoday_tasks') | length > 0 %}
+          on
+        {% else %}
+          off
+        {% endif %}
+```
+
+The coresponding markdown card might look like:
+
+```yaml
+type: conditional
+conditions:
+  - entity: binary_sensor.tasks_due_today
+    state: 'on'
+card:
+  type: markdown
+  content: |-
+      {% for task in state_attr('calendar.house', 'duetoday_tasks') -%}
+      - {{ task }}
+      {% endfor %}
+  title: 'Today'
+```
