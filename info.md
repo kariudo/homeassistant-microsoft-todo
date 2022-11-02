@@ -14,4 +14,4 @@ Service name changed to `microsoft_todo.new_task`. Please update your automation
 - Custom due date, reminder date, and note;
 - Allows to expose your to-do lists as sensors and use in automations. 
 
-Please check [the repository](https://github.com/black-roland/homeassistant-microsoft-todo#readme) for configuration and usage instructions.
+Please check [the repository](https://github.com/kariudo/homeassistant-microsoft-todo#readme) for configuration and usage instructions.
