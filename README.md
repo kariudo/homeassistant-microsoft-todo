@@ -2,6 +2,8 @@
 
 The integration brings your Microsoft To Do tasks into Home Assistant and allows creating new tasks.
 
+This fork ([kariudo/homeassistant-microsoft-todo](https://github.com/kariudo/homeassistant-microsoft-todo)) supports better behavior for overdue tasks, and the ability to get tasks due today (useful for automations with notifications and TTS annoucements etc).
+
 ## Work in progress
 
 Work is still in progress and there might be breaking changes. Tasks for the 1st release are tracked on [the MVP board](https://github.com/black-roland/homeassistant-microsoft-todo/projects/2).
